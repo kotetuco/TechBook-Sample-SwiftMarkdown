@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var paragraphs: [MarkdownParagraph] = []
+    let initialText: String
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            MarkdownPreviewView(paragraphs: $paragraphs)
+            Spacer()
         }
-        .padding()
+        .padding(8)
+        .onAppear {
+            paragraphs = SimpleMarkdownParser().parseAndDebug(with: initialText)
+        }
     }
 }
 
 #Preview {
-    ContentView()
+    let sourceTextForPreview =
+"""
+# Paragraph 1
+**Strong**
+# Paragraph 2
+_emphasis_
+# Paragraph 3
+`inline`
+"""
+    return ContentView(initialText: sourceTextForPreview)
 }

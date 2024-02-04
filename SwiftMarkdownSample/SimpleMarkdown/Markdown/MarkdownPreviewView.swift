@@ -74,16 +74,13 @@ struct ElementViewGroup: View {
     }
 }
 
-struct MarkdownPreviewView_Previews: PreviewProvider {
-    @State static var paragraphs: [MarkdownParagraph] = [
+#Preview {
+    @State var paragraphsForPreview = [
         MarkdownParagraph(elements: [], type: .heading(planeText: "Title", level: 1)),
         MarkdownParagraph(elements: [MarkdownElement(type: .text(planeText: "try! Swift Tokyo"))], type: .textParagraph)
     ]
-
-    static var previews: some View {
-        VStack {
-            MarkdownPreviewView(paragraphs: $paragraphs)
-            Spacer()
-        }
+    return VStack {
+        MarkdownPreviewView(paragraphs: $paragraphsForPreview)
+        Spacer()
     }
 }
