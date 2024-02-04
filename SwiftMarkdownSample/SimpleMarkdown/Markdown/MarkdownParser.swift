@@ -8,16 +8,11 @@
 import Foundation
 import Markdown
 
+// MARK: - ブロック要素
+
 enum MarkdownParagraphType {
     case heading(planeText: String, level: Int)
     case textParagraph
-}
-
-enum MarkdownElementType {
-    case text(planeText: String)
-    case strong(planeText: String)
-    case emphasis(planeText: String)
-    case inlineCode(planeText: String)
 }
 
 struct MarkdownParagraph: Identifiable {
@@ -26,10 +21,21 @@ struct MarkdownParagraph: Identifiable {
     var type: MarkdownParagraphType
 }
 
+// MARK: - ブロック内の各要素
+
+enum MarkdownElementType {
+    case text(planeText: String)
+    case strong(planeText: String)
+    case emphasis(planeText: String)
+    case inlineCode(planeText: String)
+}
+
 struct MarkdownElement: Identifiable {
     var id = UUID()
     var type: MarkdownElementType
 }
+
+// MARK: - SimpleMarkdownParser
 
 struct SimpleMarkdownParser {
     func parse(with sourceText: String) -> [MarkdownParagraph] {
