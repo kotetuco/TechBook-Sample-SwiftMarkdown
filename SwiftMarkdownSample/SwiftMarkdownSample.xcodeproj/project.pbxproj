@@ -11,6 +11,9 @@
 		F9DE9C832B6F67A300BDD009 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE9C822B6F67A300BDD009 /* ContentView.swift */; };
 		F9DE9C852B6F67A400BDD009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DE9C842B6F67A400BDD009 /* Assets.xcassets */; };
 		F9DE9C892B6F67A400BDD009 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DE9C882B6F67A400BDD009 /* Preview Assets.xcassets */; };
+		F9DE9C902B6F692800BDD009 /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = F9DE9C8F2B6F692800BDD009 /* Markdown */; };
+		F9DE9C922B6F694D00BDD009 /* MarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE9C912B6F694D00BDD009 /* MarkdownParser.swift */; };
+		F9DE9C942B6F69A600BDD009 /* MarkdownPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DE9C932B6F69A600BDD009 /* MarkdownPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		F9DE9C842B6F67A400BDD009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9DE9C862B6F67A400BDD009 /* SimpleMarkdown.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleMarkdown.entitlements; sourceTree = "<group>"; };
 		F9DE9C882B6F67A400BDD009 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F9DE9C912B6F694D00BDD009 /* MarkdownParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownParser.swift; sourceTree = "<group>"; };
+		F9DE9C932B6F69A600BDD009 /* MarkdownPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DE9C902B6F692800BDD009 /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,7 @@
 			children = (
 				F9DE9C802B6F67A300BDD009 /* SimpleMarkdownApp.swift */,
 				F9DE9C822B6F67A300BDD009 /* ContentView.swift */,
+				F9DE9C8D2B6F68A700BDD009 /* Markdown */,
 				F9DE9C842B6F67A400BDD009 /* Assets.xcassets */,
 				F9DE9C862B6F67A400BDD009 /* SimpleMarkdown.entitlements */,
 				F9DE9C872B6F67A400BDD009 /* Preview Content */,
@@ -67,6 +74,15 @@
 				F9DE9C882B6F67A400BDD009 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F9DE9C8D2B6F68A700BDD009 /* Markdown */ = {
+			isa = PBXGroup;
+			children = (
+				F9DE9C912B6F694D00BDD009 /* MarkdownParser.swift */,
+				F9DE9C932B6F69A600BDD009 /* MarkdownPreviewView.swift */,
+			);
+			path = Markdown;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +101,9 @@
 			dependencies = (
 			);
 			name = SimpleMarkdown;
+			packageProductDependencies = (
+				F9DE9C8F2B6F692800BDD009 /* Markdown */,
+			);
 			productName = SimpleMarkdown;
 			productReference = F9DE9C7E2B6F67A300BDD009 /* SimpleMarkdown.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +132,9 @@
 				Base,
 			);
 			mainGroup = F9DE9C5F2B6F676500BDD009;
+			packageReferences = (
+				F9DE9C8E2B6F692800BDD009 /* XCRemoteSwiftPackageReference "swift-markdown" */,
+			);
 			productRefGroup = F9DE9C692B6F676500BDD009 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DE9C942B6F69A600BDD009 /* MarkdownPreviewView.swift in Sources */,
 				F9DE9C832B6F67A300BDD009 /* ContentView.swift in Sources */,
 				F9DE9C812B6F67A300BDD009 /* SimpleMarkdownApp.swift in Sources */,
+				F9DE9C922B6F694D00BDD009 /* MarkdownParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +393,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9DE9C8E2B6F692800BDD009 /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-markdown.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9DE9C8F2B6F692800BDD009 /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9DE9C8E2B6F692800BDD009 /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9DE9C602B6F676500BDD009 /* Project object */;
 }
