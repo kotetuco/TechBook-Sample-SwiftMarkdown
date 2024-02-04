@@ -77,7 +77,7 @@ struct ElementViewGroup: View {
 #Preview {
     @State var paragraphsForPreview = [
         MarkdownParagraph(elements: [], type: .heading(planeText: "Title", level: 1)),
-        MarkdownParagraph(elements: [MarkdownElement(type: .text(planeText: "try! Swift Tokyo"))], type: .textParagraph)
+        MarkdownParagraph(elements: [MarkdownElement(type: .text(planeText: "This is a simple swift-markdown sample."))], type: .textParagraph)
     ]
     return VStack {
         MarkdownPreviewView(paragraphs: $paragraphsForPreview)

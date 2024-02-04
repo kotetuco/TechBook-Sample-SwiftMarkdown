@@ -10,7 +10,7 @@ import SwiftUI
 let sampleMarkdownText =
 """
 # Title
-**try!** _Swift_ `Tokyo`
+This is a **simple** `swift-markdown` _sample_.
 """
 
 @main
